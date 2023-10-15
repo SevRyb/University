@@ -1,0 +1,16 @@
+[INFO] Turned on
+[INFO] Video added: video1
+[INFO] Video added: video2
+[INFO] Playing: video1
+[INFO] Paused
+[INFO] Playing: video2
+[INFO] No next video
+[INFO] Current: video2
+[INFO] No next video
+[INFO] Playing: video1
+[INFO] Video added: movie
+[INFO] Video added: youtube-video
+[INFO] Video: movie
+[INFO] Video: youtube-video
+[INFO] Playing: movie
+[INFO] Turned off
