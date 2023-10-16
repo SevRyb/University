@@ -31,32 +31,27 @@ public class FileManager
 	 * @throws FileNotFoundException 
 	 * @throws IOException 
 	 */
-	public void saveResult(double result) throws FileNotFoundException, IOException
+	public void saveResult(double result)
 	{
-		try
+		try (PrintWriter fileOutTxt = new PrintWriter(new File(txtFileName)))
 		{
-			PrintWriter fileOutTxt = new PrintWriter(new File(txtFileName));
 			fileOutTxt.print(result);
 			fileOutTxt.flush();
-			fileOutTxt.close();
 		}
 		catch (FileNotFoundException ex)
 		{
 			System.out.print("[ERROR] Text file not found!");
 		}
-
-		try
+		
+		try (DataOutputStream fileOutBin = new DataOutputStream(new FileOutputStream(binFileName)))
 		{
-			DataOutputStream fileOutBin = new DataOutputStream(new FileOutputStream(binFileName));
 			fileOutBin.writeDouble(result);
 			fileOutBin.flush();
-			fileOutBin.close();
 		}
 		catch (IOException ex)
 		{
 			System.out.print("[ERROR] Binary file writing error!");
 		}
-
 	}
 	/**
 	 * Reads double value from text file
@@ -65,12 +60,9 @@ public class FileManager
 	public double readResultTxt() throws FileNotFoundException
 	{
 		double result = 0;
-		try
+		try (Scanner scanner = new Scanner(new File(txtFileName)))
 		{
-			File file = new File(txtFileName);
-			Scanner scanner = new Scanner(file);
 			result = scanner.nextDouble();
-			scanner.close();
 		}
 		catch (FileNotFoundException ex)
 		{
@@ -86,11 +78,9 @@ public class FileManager
 	public double readResultBin() throws IOException
 	{
 		double result = 0;
-		try
+		try (DataInputStream file = new DataInputStream(new FileInputStream(binFileName)))
 		{
-	        DataInputStream file = new DataInputStream(new FileInputStream(binFileName));
 	        result = file.readDouble();
-	        file.close();
 		}
 		catch (IOException ex)
 		{

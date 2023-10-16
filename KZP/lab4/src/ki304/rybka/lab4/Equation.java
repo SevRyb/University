@@ -24,14 +24,12 @@ public class Equation
         	denominator = Math.sin(3 * x - 1);
             y = (x - 4) / denominator;
             if (y == Double.NaN || y == Double.NEGATIVE_INFINITY || y == Double.POSITIVE_INFINITY)
-                throw new ArithmeticException();
+            	throw new CalcException("Unknown");
         } 
         catch (ArithmeticException ex) 
         {
             if (denominator == 0)
                 throw new CalcException("Division by zero!");
-            else
-                throw new CalcException("Unknown");
         }
 		return y;
 	}
