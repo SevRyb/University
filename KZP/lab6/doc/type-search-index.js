@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ki304.rybka.lab6","l":"App"},{"p":"ki304.rybka.lab6","l":"Apple"},{"p":"ki304.rybka.lab6","l":"Basket"},{"p":"ki304.rybka.lab6","l":"Bottle"},{"p":"ki304.rybka.lab6","l":"IObject"}];updateSearchResults();
